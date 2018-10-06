@@ -34,9 +34,7 @@ const handlebarsRenderer = (data, locals) => {
     // no additional helpers available. No problem.
   }
 
-  Object.keys(helpers).forEach(k => handlebars.registerHelper(k, helpers[k]))
-
-  return template(locals)
+  return template(locals, {helpers})
 }
 
 ['hbs', 'handlebars'].forEach(ext => {
