@@ -31,6 +31,7 @@ const handlebarsRenderer = (data, locals) => {
   try {
     helpers = require(helperDir)(hexo)
   } catch (e) {
+    console.error(e)
     // no additional helpers available. No problem.
   }
 
