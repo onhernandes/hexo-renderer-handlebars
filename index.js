@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const handlebars = require('handlebars')
+const handlebarsHelpers = require('handlebars-helpers')
 
 require('./helpers')(hexo)
 
@@ -33,6 +34,8 @@ const handlebarsRenderer = (data, locals) => {
   } catch (e) {
     console.error(e)
   }
+
+  helpers = Object.assign({}, handlebarsHelpers, helpers)
 
   return template(locals, {helpers})
 }
