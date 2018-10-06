@@ -14,7 +14,7 @@ const handlebarsRenderer = (data, locals) => {
   try {
     partials = fs.readdirSync(partialDir)
   } catch (e) {
-    // if this fails, there just aren't any partials. No problem.
+    console.error(e)
   }
 
   if (partials) {
@@ -32,7 +32,6 @@ const handlebarsRenderer = (data, locals) => {
     helpers = require(helperDir)(hexo)
   } catch (e) {
     console.error(e)
-    // no additional helpers available. No problem.
   }
 
   return template(locals, {helpers})
