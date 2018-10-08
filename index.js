@@ -3,8 +3,6 @@ const fs = require('fs')
 const handlebars = require('handlebars')
 const handlebarsHelpers = require('handlebars-helpers')
 
-require('./helpers')(hexo)
-
 const handlebarsRenderer = (data, locals) => {
   const template = handlebars.compile(data.text)
   const helperDir = path.join(hexo.theme_dir, 'helper')
